@@ -1,0 +1,37 @@
+{% set blueprint = "main" %}
+
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container">
+            <img class="logo"
+                 src="{{ url_for('static', filename='img/logo.png') }}"
+                 alt="logo of Neurothrone brand">
+            <ul class="navbar-nav ms-5">
+                <li class="nav-item">
+                    <a class="nav-link {{ 'active' if active_page == 'index' }}"
+                            {% if active_page == 'index' %}
+                       aria-current="page"
+                            {% endif %}
+                       href="{{ url_for(blueprint + '.index') }}"><i class="fas fa-home"></i> Home</a></li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold {{ 'active' if active_page == 'about' }}"
+                            {% if active_page == 'about' %}
+                       aria-current="page"
+                            {% endif %}
+                       href="{{ url_for(blueprint + '.about') }}"><i class="fas fa-address-card"></i> About</a></li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold {{ 'active' if active_page == 'projects' }}"
+                            {% if active_page == 'projects' %}
+                       aria-current="page"
+                            {% endif %}
+                       href="{{ url_for(blueprint + '.projects') }}"><i class="fas fa-hammer"></i> Projects</a></li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold {{ 'active' if active_page == 'contact' }}"
+                            {% if active_page == 'contact' %}
+                       aria-current="page"
+                            {% endif %}
+                       href="{{ url_for(blueprint + '.contact') }}"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>

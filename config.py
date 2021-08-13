@@ -48,7 +48,7 @@ class Config:
     # MS_TRANSLATOR_KEY = os.environ.get("MS_TRANSLATOR_KEY")
 
     # Subdomain testing
-    # SERVER_NAME = "neurothrone.tld:5000"
+    SERVER_NAME = "neurothrone.tld:5000"
 
 
 class DevelopmentConfig(Config):

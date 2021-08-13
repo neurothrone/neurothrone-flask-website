@@ -16,6 +16,9 @@ def create_app(config_class: Config = Config) -> Flask:
     migrate.init_app(app, db)
 
     # register blueprints
+    from app.blueprints.admin import bp as admin_bp
+    app.register_blueprint(admin_bp)
+
     from app.blueprints.main import bp as main_bp
     app.register_blueprint(main_bp)
 

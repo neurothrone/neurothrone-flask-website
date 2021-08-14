@@ -1,3 +1,5 @@
+from typing import Type
+
 from flask import Flask
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
@@ -8,7 +10,7 @@ db = SQLAlchemy()
 migrate = Migrate()
 
 
-def create_app(config_class: Config = Config) -> Flask:
+def create_app(config_class: Type[Config] = Config) -> Flask:
     app = Flask(__name__)
     app.config.from_object(config_class)
 

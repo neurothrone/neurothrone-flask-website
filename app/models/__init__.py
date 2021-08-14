@@ -1,4 +1,3 @@
-from abc import abstractmethod
 from datetime import datetime
 from typing import Generic
 from typing import Type
@@ -30,20 +29,19 @@ class BaseModel(db.Model, Generic[T]):
         db.session.delete(self)
         db.session.commit()
 
+    def to_dict(self) -> dict:
+        return {
+            "created_on": self.created_on,
+            "updated_on": self.updated_on
+        }
+
     @classmethod
     def find_by_id(cls: Type[T], _id: int) -> T:
         return cls.query.filter_by(id=_id).first()
 
     @classmethod
-    def find_by_name(cls: Type[T], name: str) -> T:
-        return cls.query.filter_by(name=name).first()
-
-    @classmethod
     def find_all(cls) -> T:
         return cls.query.all()
-
-    @abstractmethod
-    def to_dict(self) -> dict: ...
 
     @classmethod
     def all_to_dict(cls) -> list[T]:

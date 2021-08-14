@@ -63,3 +63,8 @@ class ProductionConfig(Config):
     DEBUG = False
     TESTING = False
     DATABASE_URI = environ.get("PRODUCTION_DATABASE_URI")
+
+
+class TestConfig(Config):
+    TESTING = True
+    SQLALCHEMY_DATABASE_URI = "sqlite://"

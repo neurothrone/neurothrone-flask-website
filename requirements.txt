@@ -1,4 +1,8 @@
+email-validator
 flask
 flask-migrate
 flask-sqlalchemy
+flask-wtf
 python-dotenv
+werkzeug
+wtforms

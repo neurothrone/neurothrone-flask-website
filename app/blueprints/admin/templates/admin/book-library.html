@@ -6,6 +6,55 @@
     <main>
         <div class="container p-5 text-center m-auto">
             <h1>Admin Book Library Page</h1>
+            {% if form %}
+                <form method="post" novalidate>
+                    {# protects against CSRF attacks #}
+                    {{ form.hidden_tag() }}
+                    <p>
+                        {{ form.name.label }}<br>
+                        {{ form.name(size=32) }}<br>
+                        {% for error in form.name.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                    </p>
+                    <p>
+                        {{ form.author.label }}<br>
+                        {{ form.author(size=32) }}<br>
+                        {% for error in form.author.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                    </p>
+                    <p>
+                        {{ form.category.label }}<br>
+                        {{ form.category(size=3) }}<br>
+                        {% for error in form.category.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                    </p>
+                    <p>
+                        {{ form.book_link.label }}<br>
+                        {{ form.book_link(size=32) }}<br>
+                        {% for error in form.book_link.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                    </p>
+                    <p>
+                        {{ form.image_link.label }}<br>
+                        {{ form.image_link(size=32) }}<br>
+                        {% for error in form.image_link.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                    </p>
+                    <p>
+                        {{ form.alt_text.label }}<br>
+                        {{ form.alt_text(size=64) }}<br>
+                        {% for error in form.alt_text.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                    </p>
+                    <p>{{ form.submit() }}</p>
+                </form>
+            {% endif %}
         </div>
     </main>
 {% endblock %}

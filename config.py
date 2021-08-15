@@ -15,7 +15,6 @@ ACCESS_EXPIRES = timedelta(hours=1)
 class Config:
     """Flask base config"""
     SECRET_KEY = environ.get("SECRET_KEY") or urandom(24)
-    SESSION_COOKIE_NAME = environ.get("SESSION_COOKIE_NAME")
     STATIC_FOLDER = "static"
     TEMPLATES_FOLDER = "templates"
 

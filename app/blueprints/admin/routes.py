@@ -21,6 +21,6 @@ def book_library():
                          image_link=form.image_link.data,
                          alt_text=form.alt_text.data)
         book.save_to_db()
-    return render_template("admin/book-library.html",
+    return render_template("admin/book-library/books.html",
                            form=form,
                            title="Book Library")

@@ -2,11 +2,10 @@ from app.models import BaseModel
 from app.models import db
 
 
-class BookStatusCategory:
+class BookCategory:
     READING = "reading"
     HAVE_READ = "have_read"
     WILL_READ = "will_read"
-    UNKNOWN = "unknown"
 
 
 class BookModel(BaseModel):
@@ -24,7 +23,7 @@ class BookModel(BaseModel):
     def __init__(self,
                  name: str,
                  author: str,
-                 category: str = BookStatusCategory.UNKNOWN,
+                 category: str = "",
                  book_link: str = "",
                  image_link: str = "",
                  alt_text: str = "") -> None:

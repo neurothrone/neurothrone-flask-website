@@ -5,9 +5,9 @@ from app.models.user import UserModel
 
 app = create_app()
 
-
 if __name__ == "__main__":
     app.run(port=5000)
+
 
 # admin.neurothrone.dev
 # api.neurothrone.dev
@@ -27,4 +27,3 @@ def make_shell_context():
         "BookModel": BookModel,
         "UserModel": UserModel
     }
-

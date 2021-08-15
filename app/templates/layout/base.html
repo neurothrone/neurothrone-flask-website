@@ -3,19 +3,35 @@
 <head>
     <meta charset="utf-8">
     <meta name="robots" content="noindex"/>
-    <title>{% if title %}{{ title }}{% else %}Neurothrone{% endif %}</title>
-    <link rel="icon" href="{{ url_for('static', filename='img/logo.png') }}">
     {% block head %}{% endblock %}
+    <title>{% if title %}{{ title }}{% else %}Neurothrone{% endif %}</title>
+    <!-- Brand icon -->
+    <link rel="icon" href="{{ url_for('static', filename='img/logo.png') }}">
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+    <!-- Fontawesome Core CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome/css/all.min.css') }}">
+    <!-- Custom Core CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Custom Additional CSS -->
+    {% block css %}{% endblock %}
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
 </head>
 <body class="d-flex flex-column h-100">
 
 {% include "layout/header.html" %}
 
+{% block flash %}{% endblock %}
+
 {% block content %}{% endblock %}
 
-{% block scripts %}{% endblock %}
-
 {% include "layout/footer.html" %}
+
+{% block scripts %}{% endblock %}
 
 </body>
 </html>

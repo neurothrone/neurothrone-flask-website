@@ -7,6 +7,12 @@
         <div class="container p-5 text-center m-auto">
             <h1>Zaid Neurothrone</h1>
             <p>Software Engineer</p>
+
+            <h2>Testing</h2>
+            <ul>
+                <li><a href="{{ url_for("admin.book_library") }}">Admin Book Library</a></li>
+                <li><a href="{{ url_for("cog.book_library") }}">Main Book Library</a></li>
+            </ul>
         </div>
     </main>
 {% endblock %}

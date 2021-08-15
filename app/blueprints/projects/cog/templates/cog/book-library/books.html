@@ -1,0 +1,33 @@
+{% extends "layout/base.html" %}
+
+{% set active_page = "book_library" %}
+
+{% block content %}
+    <main>
+        <div class="container p-5 text-center m-auto">
+            <h1>Book Library Page</h1>
+
+            <h2>Reading</h2>
+            {% for book in books %}
+                {% if book.category == category.READING %}
+                    {% include "cog/book-library/_book.html" %}
+                {% endif %}
+            {% endfor %}
+
+            <h2>Have Read</h2>
+            {% for book in books %}
+                {% if book.category == category.HAVE_READ %}
+                    {% include "cog/book-library/_book.html" %}
+                {% endif %}
+            {% endfor %}
+
+            <h2>Will Read</h2>
+            {% for book in books %}
+                {% if book.category == category.WILL_READ %}
+                    {% include "cog/book-library/_book.html" %}
+                {% endif %}
+            {% endfor %}
+
+        </div>
+    </main>
+{% endblock %}

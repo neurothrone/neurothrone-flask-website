@@ -1,0 +1,16 @@
+.bg-dark {
+    background-color: var(--bg-color-secondary) !important;
+}
+
+.logo {
+    height: 50px;
+    width: 50px;
+}
+
+.nav-link:hover {
+    color: var(--text-color-nav-link-hover) !important;
+}
+
+.active {
+    color: var(--text-color-nav-link-active) !important;
+}

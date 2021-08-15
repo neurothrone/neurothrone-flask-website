@@ -1,6 +1,8 @@
+from flask import render_template
+
 from app.blueprints.projects.work import bp
 
 
 @bp.route("/")
-def test():
-    return "Work test"
+def index():
+    return render_template("work/index.html", title="Work")

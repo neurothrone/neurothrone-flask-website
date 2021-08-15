@@ -1,0 +1,37 @@
+footer {
+    background-color: var(--bg-color-secondary) !important;
+    color: #fff;
+}
+
+footer .fab {
+    border-radius: 30px;
+    font-size: 15px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    width: 30px;
+}
+
+.footer-header-text {
+    border-bottom: solid 1px #fff;
+}
+
+.fa-github {
+    background-color: var(--social-color-github-primary);
+    color: var(--social-color-github-secondary);
+}
+
+.fa-github:hover {
+    background-color: var(--social-color-github-secondary);
+    color: var(--social-color-github-primary);
+}
+
+.fa-linkedin {
+    background-color: var(--social-color-linkedin-primary);
+    color: var(--social-color-linkedin-secondary);
+}
+
+.fa-linkedin:hover {
+    background-color: var(--social-color-linkedin-secondary);
+    color: var(--social-color-linkedin-primary);
+}

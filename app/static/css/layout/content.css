@@ -1,0 +1,4 @@
+.bg-content {
+    background-color: var(--bg-color-secondary) !important;
+    border: 1px solid var(--border-color-primary);
+}

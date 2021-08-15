@@ -1,0 +1,35 @@
+/*
+    Global styles
+*/
+@import "general/main.css";
+@import "input/main.css";
+@import "layout/content.css";
+@import "layout/footer.css";
+@import "layout/header.css";
+
+/*
+    Global variables
+*/
+:root {
+/* Website Colors */
+    /* Background Colors */
+    --bg-color-primary: #090c10;
+    --bg-color-secondary: #161b22;
+
+    /* Text Colors */
+    --text-color-primary: #eaf0f6;
+    --text-color-secondary: #adb5bd;
+    --border-color-primary: #21262d;
+
+    /* Navigation Colors */
+    --text-color-nav-link-active: goldenrod;
+    --text-color-nav-link-hover: #6f42c1;
+    --bg-color-nav-local: #0d1117;
+
+    /* Social Colors */
+    --social-color-github-primary: #6f42c1;
+    --social-color-github-secondary: #fff;
+
+    --social-color-linkedin-primary: #0a66c2;
+    --social-color-linkedin-secondary: #fff;
+}

@@ -7,7 +7,7 @@ from app.models.book import BookModel
 
 @bp.route("/")
 def admin():
-    return render_template("admin/admin.html")
+    return render_template("admin/admin.html", title="Admin")
 
 
 @bp.route("/book-library", methods=["GET", "POST"])

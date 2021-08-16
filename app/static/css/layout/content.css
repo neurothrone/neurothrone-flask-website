@@ -2,3 +2,12 @@
     background-color: var(--bg-color-secondary) !important;
     border: 1px solid var(--border-color-primary);
 }
+
+.main-navigation {
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+.main-footer {
+    border-top: 1px solid var(--border-color) !important;
+}
+

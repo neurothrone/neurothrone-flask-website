@@ -13,17 +13,26 @@
 :root {
 /* Website Colors */
     /* Background Colors */
-    --bg-color-primary: #090c10;
-    --bg-color-secondary: #161b22;
+    /*--bg-color-primary: #090c10;*/
+    --bg-color-primary: #161616;
+    /*--bg-color-secondary: #161b22;*/
+    --bg-color-secondary: #1a1a1a;
+    --border-color: #2e2e2e;
 
     /* Text Colors */
     --text-color-primary: #eaf0f6;
+    --text-color-header: #f8f8f8;
+    --text-color-emphasis: #7f6df2;
     --text-color-secondary: #adb5bd;
     --border-color-primary: #21262d;
 
     /* Navigation Colors */
+    /*--text-color-nav-link: #dcddde;*/
+    --text-color-nav-link: #999999;
     --text-color-nav-link-active: goldenrod;
-    --text-color-nav-link-hover: #6f42c1;
+    /*--text-color-nav-link-hover: #6f42c1;*/
+    /*--text-color-nav-link-hover: #483699;*/
+    --text-color-nav-link-hover: #7f6df2;
     --bg-color-nav-local: #0d1117;
 
     /* Social Colors */

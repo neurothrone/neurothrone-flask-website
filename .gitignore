@@ -15,3 +15,6 @@ venv.bak/
 
 # database
 app/data.db
+
+# experimentation
+_experimentation/

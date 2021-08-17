@@ -18,6 +18,9 @@ class Config:
     STATIC_FOLDER = "static"
     TEMPLATES_FOLDER = "templates"
 
+    # Subdomain testing
+    SERVER_NAME = "neurothrone.tld:5000"
+
     # SQLAlchemy
     SQLALCHEMY_DATABASE_URI = \
         os.environ.get("DATABASE_URL") or \
@@ -45,9 +48,6 @@ class Config:
 
     # Microsoft Translator API
     # MS_TRANSLATOR_KEY = os.environ.get("MS_TRANSLATOR_KEY")
-
-    # Subdomain testing
-    SERVER_NAME = "neurothrone.tld:5000"
 
 
 class DevelopmentConfig(Config):

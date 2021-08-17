@@ -45,13 +45,6 @@
                             <span style="color: red;">[{{ error }}]</span>
                         {% endfor %}
                     </p>
-                    <p>
-                        {{ form.alt_text.label }}<br>
-                        {{ form.alt_text(size=64) }}<br>
-                        {% for error in form.alt_text.errors %}
-                            <span style="color: red;">[{{ error }}]</span>
-                        {% endfor %}
-                    </p>
                     <p>{{ form.submit() }}</p>
                 </form>
             {% endif %}

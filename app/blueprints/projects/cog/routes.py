@@ -13,9 +13,8 @@ def index():
 
 @bp.route("/book-library")
 def book_library():
-    books = BookModel.find_all()
     return render_template("cog/book-library/main.html",
-                           books=books,
+                           books=BookModel.find_all(),
                            title="Book Library",
                            category=BookCategory)
 
@@ -36,3 +35,12 @@ def microblog():
 def todo():
     return render_template("cog/todo/main.html",
                            title="Todo")
+
+
+# @bp.route("/book-library/book", methods=["POST"])
+# def create_book():
+#     from src.models.book import BookModel
+#     args = request.form
+#     book = BookModel(**args)
+#     book.save_to_db()
+#     return redirect("/admin/book-library")

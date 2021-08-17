@@ -1,4 +1,7 @@
+from flask import flash
+from flask import redirect
 from flask import render_template
+from flask import url_for
 
 from app.blueprints.admin import bp
 from app.blueprints.admin.forms import AddBookForm
@@ -18,9 +21,10 @@ def book_library():
                          author=form.author.data,
                          category=form.category.data,
                          book_link=form.book_link.data,
-                         image_link=form.image_link.data,
-                         alt_text=form.alt_text.data)
+                         image_link=form.image_link.data)
         book.save_to_db()
+        flash(message=f"Book '{book.name}' added.", category="success")
+        return redirect(url_for("admin.book_library"))
     return render_template("admin/book-library/books.html",
                            form=form,
                            title="Book Library")

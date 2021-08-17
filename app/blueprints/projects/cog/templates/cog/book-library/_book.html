@@ -1,5 +1,11 @@
-<p>{{ book.name }}</p>
-<p>{{ book.author }}</p>
-<p>{{ book.book_link }}</p>
-<p>{{ book.image_link }}</p>
-<p>{{ book.alt_text }}</p>
+<div class="col">
+    <a href="{{ book.book_link }}">
+        <img src="{{ book.image_link }}"
+             alt="book cover for {{ book.name }} by {{ book.author }}"
+             width="100px"
+             height="100px"
+             data-toggle="tooltip"
+             data-placement="top"
+             title="{{ book.name }}">
+    </a>
+</div>

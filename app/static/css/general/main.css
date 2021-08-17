@@ -8,3 +8,8 @@ body {
     color: var(--text-color-primary);
 }
 
+.message {
+    background-color: #6f42c1 !important;
+    color: var(--text-color-primary) !important;
+    text-align: center;
+}

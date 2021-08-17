@@ -1,32 +1,49 @@
 {% extends "layout/base.html" %}
 
-{% set active_page = "book_library" %}
+{% set active_page = "cog_book_library" %}
 
 {% block content %}
-    <main>
-        <div class="container p-5 text-center m-auto">
-            <h1>Book Library Page</h1>
+    <main class="my-5">
+        <div class="container text-center">
+            <h1>Book Library</h1>
+            <section>
+                <div class="container my-4 p-4 bg-light rounded-3 col-lg-8 bg-content">
+                    <h2 class="mb-5">Currently reading</h2>
+                    <div class="row row-cols-4">
+                        {% for book in books %}
+                            {% if book.category == category.READING %}
+                                {% include "cog/book-library/_book.html" %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="container my-4 p-4 bg-light rounded-3 col-lg-8 bg-content">
+                    <h2 class="mb-5">Books I've read</h2>
+                    <div class="row row-cols-4">
 
-            <h2>Reading</h2>
-            {% for book in books %}
-                {% if book.category == category.READING %}
-                    {% include "cog/book-library/_book.html" %}
-                {% endif %}
-            {% endfor %}
+                        {% for book in books %}
+                            {% if book.category == category.HAVE_READ %}
+                                {% include "cog/book-library/_book.html" %}
+                            {% endif %}
+                        {% endfor %}
 
-            <h2>Have Read</h2>
-            {% for book in books %}
-                {% if book.category == category.HAVE_READ %}
-                    {% include "cog/book-library/_book.html" %}
-                {% endif %}
-            {% endfor %}
-
-            <h2>Will Read</h2>
-            {% for book in books %}
-                {% if book.category == category.WILL_READ %}
-                    {% include "cog/book-library/_book.html" %}
-                {% endif %}
-            {% endfor %}
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="container p-4 bg-light rounded-3 col-lg-8 bg-content">
+                    <h2 class="mb-5">Books I'm going to read</h2>
+                    <div class="row row-cols-4">
+                        {% for book in books %}
+                            {% if book.category == category.WILL_READ %}
+                                {% include "cog/book-library/_book.html" %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
 {% endblock %}

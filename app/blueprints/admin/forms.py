@@ -20,7 +20,6 @@ class AddBookForm(FlaskForm):
     category = SelectField("Category", choices=CATEGORIES, validators=[DataRequired()])
     book_link = StringField("Book link", validators=[DataRequired()])
     image_link = StringField("Image link", validators=[DataRequired()])
-    alt_text = StringField("Alternative text", validators=[DataRequired()])
     submit = SubmitField("Add Book")
 
     # Custom defined methods of the format: validate_<field_name> will be used

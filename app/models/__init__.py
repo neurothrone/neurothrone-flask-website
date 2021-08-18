@@ -40,6 +40,10 @@ class BaseModel(db.Model, Generic[T]):
         return cls.query.filter_by(id=_id).first()
 
     @classmethod
+    def find_by_name(cls: Type[T], name: str) -> T:
+        return cls.query.filter_by(name=name).first()
+
+    @classmethod
     def find_all(cls) -> T:
         return cls.query.all()
 

@@ -20,7 +20,7 @@ def index():
 
 @bp.route("/calendar-app")
 def calendar_app():
-    return "Calendar App"
+    return render_template("jba/calendar-app/main.html")
 
 
 @bp.route("/weather-app")

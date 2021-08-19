@@ -15,12 +15,14 @@ UNITS = "metric"
 
 @bp.route("/")
 def index():
-    return render_template("jba/index.html", title="JetBrains Academy")
+    return render_template("jba/index.html",
+                           title="JetBrains Academy Projects")
 
 
 @bp.route("/calendar-app")
 def calendar_app():
-    return render_template("jba/calendar-app/main.html")
+    return render_template("jba/calendar-app/main.html",
+                           title="Calendar App")
 
 
 @bp.route("/weather-app")

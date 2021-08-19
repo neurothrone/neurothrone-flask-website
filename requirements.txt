@@ -2,6 +2,7 @@ email-validator
 flask
 flask-cors
 flask-migrate
+flask-restful
 flask-sqlalchemy
 flask-wtf
 python-dotenv

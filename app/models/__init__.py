@@ -44,9 +44,11 @@ class BaseModel(db.Model, Generic[T]):
         return cls.query.filter_by(name=name).first()
 
     @classmethod
-    def find_all(cls) -> T:
+    def find_all(cls) -> list[T]:
         return cls.query.all()
 
     @classmethod
-    def all_to_dict(cls) -> list[T]:
+    def all_to_dict(cls, items: list[T] = None) -> list[dict]:
+        if items:
+            return [item.to_dict() for item in items]
         return [item.to_dict() for item in cls.find_all()]

@@ -2,7 +2,7 @@ from app.models import BaseModel
 from app.models import db
 
 
-class CityModel(BaseModel):
+class City(BaseModel):
     __tablename__ = "cities"
 
     id = db.Column(db.Integer, primary_key=True)

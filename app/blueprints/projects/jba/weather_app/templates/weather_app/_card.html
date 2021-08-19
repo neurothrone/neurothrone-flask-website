@@ -1,6 +1,6 @@
 <div class="card weather-card">
     <div class="delete-wrapper">
-        <form action="{{ url_for('jba.delete_city', city_id=city.id) }}" method="POST">
+        <form action="{{ url_for('weather_app.delete_city', city_id=city.id) }}" method="POST">
             <input type="hidden" name="id" value="">
             <button class="delete-button" type="submit">&#10006;</button>
         </form>

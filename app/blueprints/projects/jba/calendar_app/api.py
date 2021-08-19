@@ -1,7 +1,7 @@
 from flask_restful import Api
 
 
-def init_api(api: Api):
+def init_api_routes(api: Api):
     from app.blueprints.projects.jba.calendar_app.resources import CreateEvent
     api.add_resource(CreateEvent, "/event")
 

@@ -8,8 +8,27 @@ body {
     color: var(--text-color-primary);
 }
 
-.message {
-    background-color: #6f42c1 !important;
+.flash-message {
     color: var(--text-color-primary) !important;
     text-align: center;
+}
+
+.flash-message-error {
+    background-color: darkred !important;
+}
+
+.flash-message-info {
+    background-color: darkgray !important;
+}
+
+.flash-message-success {
+    background-color: green !important;
+}
+
+.flash-message-warning {
+    background-color: yellow !important;
+}
+
+.flash-message-neurothrone {
+    background-color: #6f42c1 !important;
 }

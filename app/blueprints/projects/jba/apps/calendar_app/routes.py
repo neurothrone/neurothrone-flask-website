@@ -1,6 +1,6 @@
 from flask import render_template
 
-from app.blueprints.projects.jba.calendar_app import bp
+from app.blueprints.projects.jba.apps.calendar_app import bp
 
 
 @bp.route("/")

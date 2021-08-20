@@ -1,0 +1,23 @@
+<div class="card text-light text-opacity-75 border-light" style="max-width: 18rem;">
+    <div class="card-header bg-dark bg-opacity-25">
+        <h4 class="d-inline">{{ city.name }}</h4>
+        <form class="d-inline float-end mt-1"
+              action="{{ url_for('weather_app.delete_city', city_id=city.id) }}"
+              method="post">
+            <button class="delete-button" type="submit">&#10006;</button>
+        </form>
+    </div>
+    <div class="card-body
+    {% if city.current_temp <= 15 %}
+    bg-info
+    {% elif city.current_temp <= 25 %}
+    bg-success
+    {% elif city.current_temp <= 35 %}
+    bg-warning
+    {% else %}
+    bg-danger
+    {% endif %}">
+        <h5 class="card-title text-dark">{{ city.current_temp }} °C</h5>
+        <p class="card-text text-dark">{{ city.current_state }}</p>
+    </div>
+</div>

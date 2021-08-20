@@ -7,8 +7,8 @@ from flask import render_template
 from flask import request
 from flask import url_for
 
-from app.blueprints.projects.jba.weather_app import bp
-from app.blueprints.projects.jba.weather_app.model import City
+from app.blueprints.projects.jba.apps.weather_app import bp
+from app.blueprints.projects.jba.apps.weather_app.model import City
 
 UNITS = "metric"
 
@@ -28,7 +28,7 @@ def add_city():
         name = request.form["city_name"].title()
 
         if City.find_by_name(name):
-            flash("The city has already been added to the list!")
+            flash(f"The city '{name}' has already been added.", category="error")
         else:
             # get weather data for that city from open weather api
             api_url = "https://api.openweathermap.org/data/2.5/weather?q={}&appid={}&units={}" \
@@ -46,8 +46,9 @@ def add_city():
                             current_temp=int(data_json["main"]["temp"]),
                             current_state=data_json["weather"][0]["main"])
                 city.save_to_db()
+                flash(f"City '{city.name}' added.", category="success")
             else:
-                flash("The city doesn't exist!")
+                flash(f"There is no city by that name.", category="error")
 
     return redirect(url_for("weather_app.index"))
 
@@ -56,4 +57,5 @@ def add_city():
 def delete_city(city_id: int):
     if city := City.find_by_id(city_id):
         city.delete_from_db()
+        flash(f"City '{city.name}' deleted.")
     return redirect(url_for("weather_app.index"))

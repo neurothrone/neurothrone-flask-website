@@ -5,7 +5,7 @@ from flask_restful import Resource
 from flask_restful import reqparse
 from flask_restful import inputs
 
-from app.blueprints.projects.jba.calendar_app.model import Event
+from app.blueprints.projects.jba.apps.calendar_app.model import Event
 
 
 class CreateEvent(Resource):

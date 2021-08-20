@@ -1,5 +1,9 @@
+.main-navigation {
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
 .bg-dark {
-    background-color: var(--bg-color-secondary) !important;
+    background-color: var(--bg-color-website-secondary) !important;
 }
 
 .logo {

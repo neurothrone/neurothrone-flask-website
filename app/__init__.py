@@ -1,3 +1,4 @@
+from datetime import date
 from typing import Type
 
 from flask import Flask
@@ -17,6 +18,10 @@ migrate = Migrate()
 def create_app(config: Type[Config] = Config) -> Flask:
     app = Flask(__name__)
     app.config.from_object(config)
+
+    @app.context_processor
+    def inject_current_year():
+        return dict(current_year=date.today().year)
 
     cors.init_app(app)
     db.init_app(app)

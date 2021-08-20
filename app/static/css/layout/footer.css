@@ -1,6 +1,13 @@
-footer {
-    background-color: var(--bg-color-secondary) !important;
+.main-footer-primary {
+    background-color: var(--bg-color-website-secondary) !important;
     color: #fff;
+    border-top: 1px solid var(--border-color) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+.main-footer-secondary {
+    background-color: var(--bg-color-footer-secondary) !important;
+    width: 100%;
 }
 
 footer .fab {

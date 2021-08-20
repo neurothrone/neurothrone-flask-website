@@ -57,5 +57,5 @@ def add_city():
 def delete_city(city_id: int):
     if city := City.find_by_id(city_id):
         city.delete_from_db()
-        flash(f"City '{city.name}' deleted.")
+        flash(f"City '{city.name}' deleted.", category="success")
     return redirect(url_for("weather_app.index"))

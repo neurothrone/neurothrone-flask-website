@@ -2,6 +2,11 @@
 
 {% set active_page = "admin_book_library" %}
 
+{% block css %}
+    <link rel="stylesheet"
+          href="{{ url_for("admin_book_library.static", filename="css/admin-book-library.css") }}">
+{% endblock %}
+
 {% block content %}
     <main>
         <div class="container p-5 text-center m-auto">

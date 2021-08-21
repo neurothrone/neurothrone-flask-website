@@ -1,11 +1,12 @@
 <div class="col">
-    <a href="{{ book.book_link }}">
-        <img src="{{ book.image_link }}"
-             alt="book cover for {{ book.name }} by {{ book.author }}"
-             width="100px"
-             height="100px"
-             data-toggle="tooltip"
-             data-placement="top"
-             title="{{ book.name }}">
-    </a>
+    <div class="card">
+        <a href="{{ book.book_link }}">
+            <img class="card-img"
+                 src="{{ book.image_link }}"
+                 alt="book cover for {{ book.name }} by {{ book.author }}"
+                 data-toggle="tooltip"
+                 data-placement="top"
+                 title="{{ book.name }}">
+        </a>
+    </div>
 </div>

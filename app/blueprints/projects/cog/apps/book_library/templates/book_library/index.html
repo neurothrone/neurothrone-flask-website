@@ -2,48 +2,47 @@
 
 {% set active_page = "cog_book_library" %}
 
+{% block css %}
+    <link rel="stylesheet"
+          href="{{ url_for("book_library.static", filename="css/book-library.css") }}">
+{% endblock %}
+
 {% block content %}
-    <main class="my-5">
-        <div class="container text-center">
+    <main>
+        <div class="container p-5 text-center">
             <h1>Book Library</h1>
-            <section>
-                <div class="container my-4 p-4 bg-light rounded-3 col-lg-8 bg-content">
-                    <h2 class="mb-5">Currently reading</h2>
-                    <div class="row row-cols-4">
+            <ul class="list-unstyled">
+                <li class="mt-5">
+                    <h2>Currently reading</h2>
+                    <div class="row row-cols-1 row-cols-md-6 g-4">
                         {% for book in books %}
                             {% if book.category == category.READING %}
                                 {% include "book_library/_book.html" %}
                             {% endif %}
                         {% endfor %}
                     </div>
-                </div>
-            </section>
-            <section>
-                <div class="container my-4 p-4 bg-light rounded-3 col-lg-8 bg-content">
-                    <h2 class="mb-5">Books I've read</h2>
-                    <div class="row row-cols-4">
-
+                </li>
+                <li class="mt-5">
+                    <h2>Books I've read</h2>
+                    <div class="row row-cols-1 row-cols-md-6 g-4">
                         {% for book in books %}
                             {% if book.category == category.HAVE_READ %}
                                 {% include "book_library/_book.html" %}
                             {% endif %}
                         {% endfor %}
-
                     </div>
-                </div>
-            </section>
-            <section>
-                <div class="container p-4 bg-light rounded-3 col-lg-8 bg-content">
-                    <h2 class="mb-5">Books I'm going to read</h2>
-                    <div class="row row-cols-4">
+                </li>
+                <li class="mt-5">
+                    <h2>Books I will read</h2>
+                    <div class="row row-cols-1 row-cols-md-6 g-4">
                         {% for book in books %}
                             {% if book.category == category.WILL_READ %}
                                 {% include "book_library/_book.html" %}
                             {% endif %}
                         {% endfor %}
                     </div>
-                </div>
-            </section>
+                </li>
+            </ul>
         </div>
     </main>
 {% endblock %}

@@ -6,6 +6,10 @@
     <main>
         <div class="container p-5 text-center m-auto">
             <h1>Admin Page</h1>
+            <ul class="list-unstyled">
+                <li><a class="text-decoration-none local-nav-link"
+                       href="{{ url_for("admin_book_library.index") }}">Book Library</a></li>
+            </ul>
         </div>
     </main>
 {% endblock %}

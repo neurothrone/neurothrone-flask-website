@@ -8,7 +8,7 @@ class BookCategory:
     WILL_READ = "will_read"
 
 
-class BookModel(BaseModel):
+class Book(BaseModel):
     __tablename__ = "books"
 
     id = db.Column(db.Integer, primary_key=True)
@@ -50,9 +50,9 @@ class BookModel(BaseModel):
                } | super().to_dict()
 
     @classmethod
-    def find_by_name(cls, name: str) -> "BookModel":
+    def find_by_name(cls, name: str) -> "Book":
         return cls.query.filter_by(name=name).first()
 
     @classmethod
-    def find_by_author(cls, author: str) -> "BookModel":
+    def find_by_author(cls, author: str) -> "Book":
         return cls.query.filter_by(author=author).first()

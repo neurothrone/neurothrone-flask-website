@@ -10,8 +10,9 @@
 
             <h2>Testing</h2>
             <ul class="list-unstyled">
-                <li><a href="{{ url_for("admin.book_library") }}">Admin Book Library</a></li>
-                <li><a href="{{ url_for("cog.book_library") }}">Main Book Library</a></li>
+                <li><a href="{{ url_for("admin.index") }}">Admin</a></li>
+                <li><a href="{{ url_for("admin_book_library.index") }}">Admin Book Library</a></li>
+                <li><a href="{{ url_for("book_library.index") }}">Book Library</a></li>
             </ul>
         </div>
     </main>

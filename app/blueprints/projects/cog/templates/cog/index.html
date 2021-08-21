@@ -1,6 +1,5 @@
 {% extends "layout/base.html" %}
 
-{% set blueprint = "cog" %}
 {% set active_page = "cog_index" %}
 
 {% block content %}
@@ -9,13 +8,13 @@
             <h1>Cortex of Growth Projects</h1>
             <ul class="list-unstyled">
                 <li><a class="text-decoration-none local-nav-link"
-                       href="{{ url_for(blueprint + '.book_library') }}">Book Library</a></li>
+                       href="{{ url_for("book_library.index") }}">Book Library</a></li>
                 <li><a class="text-decoration-none local-nav-link"
-                       href="{{ url_for(blueprint + '.eternity_of_code') }}">Eternity of Code</a></li>
+                       href="{{ url_for("eternity_of_code.index") }}">Eternity of Code</a></li>
                 <li><a class="text-decoration-none local-nav-link"
-                       href="{{ url_for(blueprint + '.microblog') }}">Microblog</a></li>
+                       href="{{ url_for("microblog.index") }}">Microblog</a></li>
                 <li><a class="text-decoration-none local-nav-link"
-                       href="{{ url_for(blueprint + '.todo') }}">To-Do List</a></li>
+                       href="{{ url_for("todo.index") }}">To-Do List</a></li>
             </ul>
         </div>
     </main>

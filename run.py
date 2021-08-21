@@ -1,6 +1,6 @@
 from app import create_app
 from app import db
-from app.models.book import BookModel
+from app.blueprints.projects.cog.apps.book_library.model import Book
 from app.models.user import UserModel
 
 app = create_app()
@@ -13,6 +13,6 @@ if __name__ == "__main__":
 def make_shell_context():
     return {
         "db": db,
-        "BookModel": BookModel,
+        "Book": Book,
         "UserModel": UserModel
     }

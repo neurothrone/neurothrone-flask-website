@@ -12,7 +12,7 @@
                     <div class="row row-cols-4">
                         {% for book in books %}
                             {% if book.category == category.READING %}
-                                {% include "cog/book-library/_book.html" %}
+                                {% include "book_library/_book.html" %}
                             {% endif %}
                         {% endfor %}
                     </div>
@@ -25,7 +25,7 @@
 
                         {% for book in books %}
                             {% if book.category == category.HAVE_READ %}
-                                {% include "cog/book-library/_book.html" %}
+                                {% include "book_library/_book.html" %}
                             {% endif %}
                         {% endfor %}
 
@@ -38,7 +38,7 @@
                     <div class="row row-cols-4">
                         {% for book in books %}
                             {% if book.category == category.WILL_READ %}
-                                {% include "cog/book-library/_book.html" %}
+                                {% include "book_library/_book.html" %}
                             {% endif %}
                         {% endfor %}
                     </div>

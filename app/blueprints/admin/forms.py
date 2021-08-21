@@ -5,28 +5,8 @@ from wtforms import SelectField
 from wtforms.validators import DataRequired
 from wtforms.validators import ValidationError
 
-from app.models.book import BookModel
+from app.blueprints.admin.model import Admin
 
 
-class AddBookForm(FlaskForm):
-    CATEGORIES = [
-        ("reading", "Reading"),
-        ("have_read", "Have Read"),
-        ("will_read", "Will Read")
-    ]
-
-    name = StringField("Name", validators=[DataRequired()])
-    author = StringField("Author", validators=[DataRequired()])
-    category = SelectField("Category", choices=CATEGORIES, validators=[DataRequired()])
-    book_link = StringField("Book link", validators=[DataRequired()])
-    image_link = StringField("Image link", validators=[DataRequired()])
-    submit = SubmitField("Add Book")
-
-    # Custom defined methods of the format: validate_<field_name> will be used
-    # by WTForms as custom validators and are invoked in addition to the
-    # stock validators in the validators=[] argument
-
-    # NOTE: will not work if it is a classmethod or staticmethod
-    def validate_name(self, name_field: StringField) -> None:
-        if BookModel.find_by_name(name_field.data):
-            raise ValidationError("There is already a book by that name.")
+class LoginForm(FlaskForm):
+    pass

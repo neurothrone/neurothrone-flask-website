@@ -6,12 +6,91 @@
         <div class="container p-5 text-center m-auto">
             <h1>Projects Page</h1>
             <ul class="list-unstyled">
-                <li><a class="text-decoration-none local-nav-link"
-                       href="{{ url_for('cog.index') }}">Cortex of Growth</a></li>
-                <li><a class="text-decoration-none local-nav-link"
-                       href="{{ url_for('jba.index') }}">JetBrains Academy</a></li>
-                <li><a class="text-decoration-none local-nav-link"
-                       href="{{ url_for('work.index') }}">Work</a></li>
+                <!-- 1 row 2 columns -->
+                <!-- Cards, two img links with headers -->
+                <!-- link: see a list of all cortex of growth projects -->
+                <li class="mt-5">
+                    <h2>Cortex of Growth Projects</h2>
+                    <div class="card-group">
+                        <div class="card">
+                            <img class="card-img-top"
+                                 src="{{ url_for('static', filename='img/logo.png') }}"
+                                 alt="...">
+                            <div class="card-body bg-dark text-light">
+                                <h5 class="card-title">Book Library</h5>
+                                <p class="card-text">This is a wider card with supporting text.</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img class="card-img-top"
+                                 src="{{ url_for('static', filename='img/logo.png') }}"
+                                 alt="...">
+                            <div class="card-body bg-dark text-light">
+                                <h5 class="card-title">Microblog</h5>
+                                <p class="card-text">This card has supporting text below as a natural lead-in to
+                                    additional content. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    Accusamus accusantium beatae deleniti error quaerat, quidem saepe sapiente
+                                    voluptatem? Autem deleniti dolores ea eligendi eveniet laudantium maxime nulla
+                                    numquam odio vitae!</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mt-5">
+                        <a class="text-decoration-none local-nav-link"
+                           href="{{ url_for('cog.index') }}">All Cortex of Growth Projects</a>
+                    </p>
+                </li>
+                <li class="mt-5">
+                    <h2>JetBrains Academy Projects</h2>
+                    <div class="card-group">
+                        <div class="card">
+                            <img class="card-img-top"
+                                 src="{{ url_for('static', filename='img/logo.png') }}"
+                                 alt="...">
+                            <div class="card-body bg-dark text-light">
+                                <h5 class="card-title">Calendar App</h5>
+                                <p class="card-text">This is a wider card with supporting text.</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img class="card-img-top"
+                                 src="{{ url_for('static', filename='img/logo.png') }}"
+                                 alt="...">
+                            <div class="card-body bg-dark text-light">
+                                <h5 class="card-title">Weather App</h5>
+                                <p class="card-text">This card has supporting text below as a natural lead-in to
+                                    additional content. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    Accusamus accusantium beatae deleniti error quaerat, quidem saepe sapiente
+                                    voluptatem? Autem deleniti dolores ea eligendi eveniet laudantium maxime nulla
+                                    numquam odio vitae!</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mt-5">
+                        <a class="text-decoration-none local-nav-link"
+                           href="{{ url_for('jba.index') }}">All JetBrains Academy Projects</a>
+                    </p>
+                </li>
+                <li class="mt-5">
+                    <h2>Work Projects</h2>
+                    <!-- Card Group -->
+                    <p class="mt-5">
+                        <a class="text-decoration-none local-nav-link"
+                           href="{{ url_for('work.index') }}">All Work Projects</a>
+                    </p>
+                </li>
             </ul>
         </div>
     </main>

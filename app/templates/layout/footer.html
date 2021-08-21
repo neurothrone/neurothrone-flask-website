@@ -2,36 +2,109 @@
     <div class="container">
         <div class="row text-start">
             <div class="col">
-                <h5>Company</h5>
+                <h5 class="main-footer-header">Neurothrone</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <a class="text-reset text-decoration-none main-footer-link"
+                           href="#">
+                            About
+                        </a>
+                    </li>
+                    <li>
+                        <a class="text-reset text-decoration-none main-footer-link"
+                           href="#">
+                            API
+                        </a>
+                    </li>
+                    <li>
+                        <a class="text-reset text-decoration-none main-footer-link"
+                           href="#">
+                            Docs (docs.neurothrone.dev)
+                        </a>
+                    </li>
+                </ul>
             </div>
             <div class="col">
-                <h5>Legal</h5>
+                <h5 class="main-footer-header">Legal</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <a class="text-reset text-decoration-none main-footer-link"
+                           href="#">
+                            Privacy Policy
+                        </a>
+                    </li>
+                    <li>
+                        <a class="text-reset text-decoration-none main-footer-link"
+                           href="#">
+                            Terms & Conditions
+                        </a>
+                    </li>
+                </ul>
             </div>
             <div class="col">
                 <div>
-                    <h5>Social</h5>
+                    <h5 class="main-footer-header">Social</h5>
                     <ul class="list-unstyled">
-                        <li class="py-3">
-                            <a class="text-reset text-decoration-none"
-                               href="https://www.github.com/neurothrone">
-                                <i class="fab fa-github"></i> GitHub
+                        <li>
+                            <a class="text-reset text-decoration-none main-footer-link"
+                               href="https://github.com/neurothrone">
+                                <i class="fab fa-github-square"></i> GitHub
                             </a>
                         </li>
                         <li>
-                            <a class="text-reset text-decoration-none"
-                               href="https://www.linkedin.com/in/neurothrone">
+                            <a class="text-reset text-decoration-none main-footer-link"
+                               href="https://linkedin.com/in/neurothrone">
                                 <i class="fab fa-linkedin"></i> LinkedIn
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-reset text-decoration-none main-footer-link"
+                               href="https://facebook.com/neurothrone">
+                                <i class="fab fa-facebook-square"></i> Facebook
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-reset text-decoration-none main-footer-link"
+                               href="https://twitter.com/neurothrone">
+                                <i class="fab fa-twitter-square"></i> Twitter
                             </a>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="col">
-                <h5>Contact</h5>
+                <div class="row">
+                    <h5 class="main-footer-header">Contact</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <address>
+                                <a class="text-reset text-decoration-none main-footer-link"
+                                   href="mailto:support@neurothrone.dev"
+                                   title="problems with website">Support</a>
+                            </address>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <h5 class="main-footer-header">Sitemap</h5>
+                    <p><a class="text-reset text-decoration-none main-footer-link"
+                          href="#">Neurothrone Sitemap</a>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
 </footer>
 <footer class="main-footer-secondary text-center">
-    <i class="far fa-copyright py-3"></i> {{ current_year }} Zaid Neurothrone
+    <span class="main-footer-copyright">
+        <i class="far fa-copyright py-3"></i> {{ current_year }} Zaid Neurothrone. All rights reserved.
+    </span>
+    <!-- Language support -->
+    <!-- Spanish, French, German, Arabic, Turkish? -->
+    <p>
+        <a class="text-reset text-decoration-none main-footer-lang-link"
+           href="#">English</a>
+        |
+        <a class="text-reset text-decoration-none main-footer-lang-link"
+           href="#">Swedish</a></p>
 </footer>

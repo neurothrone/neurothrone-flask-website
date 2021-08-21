@@ -6,9 +6,12 @@
         <div class="container p-5 text-center m-auto">
             <h1>Projects Page</h1>
             <ul class="list-unstyled">
-                <li><a href="{{ url_for('cog.index') }}">Cortex of Growth</a></li>
-                <li><a href="{{ url_for('jba.index') }}">JetBrains Academy</a></li>
-                <li><a href="{{ url_for('work.index') }}">Work</a></li>
+                <li><a class="text-decoration-none local-nav-link"
+                       href="{{ url_for('cog.index') }}">Cortex of Growth</a></li>
+                <li><a class="text-decoration-none local-nav-link"
+                       href="{{ url_for('jba.index') }}">JetBrains Academy</a></li>
+                <li><a class="text-decoration-none local-nav-link"
+                       href="{{ url_for('work.index') }}">Work</a></li>
             </ul>
         </div>
     </main>

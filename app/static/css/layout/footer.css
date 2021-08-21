@@ -1,8 +1,7 @@
 .main-footer-primary {
-    background-color: var(--bg-color-website-secondary) !important;
-    color: #fff;
-    border-top: 1px solid var(--border-color) !important;
-    border-bottom: 1px solid var(--border-color) !important;
+    background-color: var(--bg-color-website-primary) !important;
+    border-top: 1px solid var(--border-color-website-primary-alt) !important;
+    border-bottom: 1px solid var(--border-color-website-primary-alt) !important;
 }
 
 .main-footer-secondary {
@@ -10,35 +9,26 @@
     width: 100%;
 }
 
-footer .fab {
-    border-radius: 30px;
-    font-size: 15px;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-    width: 30px;
+.main-footer-header {
+    color: var(--text-color-footer-header) !important;
 }
 
-.footer-header-text {
-    border-bottom: solid 1px #fff;
+.main-footer-link {
+    color: var(--text-color-footer-link-primary) !important;
 }
 
-.fa-github {
-    background-color: var(--social-color-github-primary);
-    color: var(--social-color-github-secondary);
+.main-footer-link:hover {
+    color: var(--text-color-global-nav-link-hover) !important;
 }
 
-.fa-github:hover {
-    background-color: var(--social-color-github-secondary);
-    color: var(--social-color-github-primary);
+.main-footer-copyright {
+    color: #aaa !important;
 }
 
-.fa-linkedin {
-    background-color: var(--social-color-linkedin-primary);
-    color: var(--social-color-linkedin-secondary);
+.main-footer-lang-link {
+    color: var(--text-color-footer-link-primary) !important;
 }
 
-.fa-linkedin:hover {
-    background-color: var(--social-color-linkedin-secondary);
-    color: var(--social-color-linkedin-primary);
+.main-footer-lang-link:hover {
+    color: var(--text-color-global-nav-link-hover) !important;
 }

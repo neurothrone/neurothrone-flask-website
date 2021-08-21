@@ -8,22 +8,14 @@
         <div class="container p-5 text-center m-auto">
             <h1>Cortex of Growth Projects</h1>
             <ul class="list-unstyled">
-                <li>
-                    <a class="nav-link"
-                       href="{{ url_for(blueprint + '.book_library') }}">Book Library</a>
-                </li>
-                <li>
-                    <a class="nav-link"
-                       href="{{ url_for(blueprint + '.eternity_of_code') }}">Eternity of Code</a>
-                </li>
-                <li>
-                    <a class="nav-link"
-                       href="{{ url_for(blueprint + '.microblog') }}">Microblog</a>
-                </li>
-                <li>
-                    <a class="nav-link"
-                       href="{{ url_for(blueprint + '.todo') }}">To-Do List</a>
-                </li>
+                <li><a class="text-decoration-none local-nav-link"
+                       href="{{ url_for(blueprint + '.book_library') }}">Book Library</a></li>
+                <li><a class="text-decoration-none local-nav-link"
+                       href="{{ url_for(blueprint + '.eternity_of_code') }}">Eternity of Code</a></li>
+                <li><a class="text-decoration-none local-nav-link"
+                       href="{{ url_for(blueprint + '.microblog') }}">Microblog</a></li>
+                <li><a class="text-decoration-none local-nav-link"
+                       href="{{ url_for(blueprint + '.todo') }}">To-Do List</a></li>
             </ul>
         </div>
     </main>

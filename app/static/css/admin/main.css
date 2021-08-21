@@ -1,4 +1,4 @@
 .bg-local-nav {
-    background-color: var(--bg-color-nav-local) !important;
+    background-color: var(--bg-color-local-nav) !important;
     border-right: 1px solid var(--border-color-primary);
 }

@@ -13,31 +13,48 @@
 :root {
 /* Website Colors */
     /* Background Colors */
-    /*--bg-content-color-primary: #090c10;*/
-    /*--bg-content-color-primary: #161616;*/
-    /*--bg-color-secondary: #161b22;*/
-    /*--bg-color-secondary: #1a1a1a;*/
-    --bg-color-website-primary: #171926;
-    --bg-color-website-secondary: #11121d;
-    --bg-color-footer-secondary: #1e2130;
+    /*--bg-color-website-primary: #000;*/
+    --bg-color-website-primary: #11121d;
+    /*--bg-color-website-primary: #161616;*/
+    /*--bg-color-website-primary: #1d0d52;*/
+    /*--bg-color-website-primary: #10052d;*/
+
+    /*--bg-color-website-primary-alt: #171926;*/
+    /*--bg-color-website-primary-alt: #090c10;*/
+    /*--bg-color-website-primary-alt: #161616;*/
+    --bg-color-website-primary-alt: #11121d;
+    /*--bg-color-website-primary-alt: #1e2130;*/
+    /*--bg-color-website-primary-alt: #1a1a1a;*/
+    /*--bg-color-website-primary-alt: #10052d;*/
+
+    /*--bg-color-footer-secondary: #1e2130;*/
+    --bg-color-footer-secondary: #10052d;
+
     --border-color-website-primary: #34384e;
-    --border-color: #2e2e2e;
+    --border-color-website-primary-alt: #2e2e2e;
 
     /* Text Colors */
-    --text-color-primary: #eaf0f6;
+    --text-color-website-primary: #eaf0f6;
+    /*--text-color-website-primary: #dcddde;*/
     --text-color-header: #f8f8f8;
     --text-color-emphasis: #7f6df2;
     --text-color-secondary: #adb5bd;
+
+    --text-color-footer-header: #999;
+    /*--text-color-footer-link-primary: #fff;*/
+    --text-color-footer-link-primary: #999;
+
     --border-color-primary: #21262d;
 
     /* Navigation Colors */
     /*--text-color-nav-link: #dcddde;*/
-    --text-color-nav-link: #999999;
-    --text-color-nav-link-active: goldenrod;
+    --text-color-global-nav-link: #999;
+    /*--text-color-global-nav-link: #fff;*/
+    --text-color-global-nav-link-hover: #7f6df2;
+    --bg-color-local-nav: #0d1117;
+    /*--text-color-nav-link-active: goldenrod;*/
     /*--text-color-nav-link-hover: #6f42c1;*/
     /*--text-color-nav-link-hover: #483699;*/
-    --text-color-nav-link-hover: #7f6df2;
-    --bg-color-nav-local: #0d1117;
 
     /* Social Colors */
     --social-color-github-primary: #6f42c1;

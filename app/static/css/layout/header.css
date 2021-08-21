@@ -1,9 +1,9 @@
 .main-navigation {
-    border-bottom: 1px solid var(--border-color) !important;
+    border-bottom: 1px solid var(--border-color-website-primary-alt) !important;
 }
 
 .bg-dark {
-    background-color: var(--bg-color-website-secondary) !important;
+    background-color: var(--bg-color-website-primary) !important;
 }
 
 .logo {
@@ -11,8 +11,12 @@
     width: 50px;
 }
 
+.nav-link {
+    /*color: var(--text-color-global-nav-link) !important;*/
+}
+
 .nav-link:hover {
-    color: var(--text-color-nav-link-hover) !important;
+    color: var(--text-color-global-nav-link-hover) !important;
 }
 
 /*.active {*/
@@ -21,9 +25,9 @@
 
 .nav-link-active {
     padding-bottom: 10%;
-    border-bottom: 2px solid var(--text-color-nav-link-hover) !important;
+    border-bottom: 2px solid var(--text-color-global-nav-link-hover) !important;
 }
 
 .theme-toggle:hover {
-    color: var(--text-color-nav-link-hover);
+    color: var(--text-color-global-nav-link-hover);
 }

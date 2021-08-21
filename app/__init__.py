@@ -19,10 +19,6 @@ def create_app(config: Type[Config] = Config) -> Flask:
     app = Flask(__name__)
     app.config.from_object(config)
 
-    @app.context_processor
-    def inject_current_year():
-        return dict(current_year=date.today().year)
-
     cors.init_app(app)
     db.init_app(app)
     migrate.init_app(app, db)
@@ -59,6 +55,10 @@ def create_app(config: Type[Config] = Config) -> Flask:
     # work section
     from app.blueprints.projects.work import bp as work_bp
     app.register_blueprint(work_bp, subdomain="projects", url_prefix="/work")
+
+    @app.context_processor
+    def inject_current_year():
+        return dict(current_year=date.today().year)
 
     return app
 

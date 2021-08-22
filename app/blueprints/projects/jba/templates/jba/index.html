@@ -2,16 +2,13 @@
 
 {% set active_page = "jba_index" %}
 
-{% block content %}
-    <main>
-        <div class="container p-5 text-center m-auto">
-            <h1>JetBrains Academy Projects</h1>
-            <ul class="list-unstyled">
-                <li><a class="text-decoration-none local-nav-link"
-                       href="{{ url_for('calendar_app.index') }}">Calendar App</a></li>
-                <li><a class="text-decoration-none local-nav-link"
-                       href="{{ url_for('weather_app.index') }}">Weather App</a></li>
-            </ul>
-        </div>
-    </main>
+{% block page_content %}
+    <div class="text-center">
+        <ul class="list-unstyled">
+            <li><a class="text-decoration-none local-nav-link"
+                   href="{{ url_for('calendar_app.index') }}">Calendar App</a></li>
+            <li><a class="text-decoration-none local-nav-link"
+                   href="{{ url_for('weather_app.index') }}">Weather App</a></li>
+        </ul>
+    </div>
 {% endblock %}

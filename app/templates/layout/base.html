@@ -26,10 +26,19 @@
 
 {% include "layout/header.html" %}
 
+<main>
+    <header>
+        <div class="text-center my-5">
+            <h1>{{ title }}</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        {% block page_content %}{% endblock %}
+    </div>
+</main>
+
 {% include "messages/_flash.html" %}
-
-{% block content %}{% endblock %}
-
 {% include "layout/footer.html" %}
 
 {% block scripts %}{% endblock %}

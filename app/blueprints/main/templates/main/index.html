@@ -2,9 +2,8 @@
 
 {% set active_page = "index" %}
 
-{% block content %}
-    <main>
-        <div class="container p-5 text-center m-auto">
+{% block page_content %}
+        <div class="text-center">
             <h1>Zaid Neurothrone</h1>
             <p>Software Engineer</p>
 
@@ -18,5 +17,4 @@
                        href="{{ url_for("book_library.index") }}">Book Library</a></li>
             </ul>
         </div>
-    </main>
 {% endblock %}

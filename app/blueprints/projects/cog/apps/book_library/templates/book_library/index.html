@@ -7,42 +7,39 @@
           href="{{ url_for("book_library.static", filename="css/book-library.css") }}">
 {% endblock %}
 
-{% block content %}
-    <main>
-        <div class="container p-5 text-center">
-            <h1>Book Library</h1>
-            <ul class="list-unstyled">
-                <li class="mt-5">
-                    <h2>Currently reading</h2>
-                    <div class="row row-cols-1 row-cols-md-6 g-4">
-                        {% for book in books %}
-                            {% if book.category == category.READING %}
-                                {% include "book_library/_book.html" %}
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                </li>
-                <li class="mt-5">
-                    <h2>Books I've read</h2>
-                    <div class="row row-cols-1 row-cols-md-6 g-4">
-                        {% for book in books %}
-                            {% if book.category == category.HAVE_READ %}
-                                {% include "book_library/_book.html" %}
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                </li>
-                <li class="mt-5">
-                    <h2>Books I will read</h2>
-                    <div class="row row-cols-1 row-cols-md-6 g-4">
-                        {% for book in books %}
-                            {% if book.category == category.WILL_READ %}
-                                {% include "book_library/_book.html" %}
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </main>
+{% block page_content %}
+    <div class="text-center">
+        <ul class="list-unstyled">
+            <li class="mt-5">
+                <h2>Currently reading</h2>
+                <div class="row row-cols-1 row-cols-md-6 g-4">
+                    {% for book in books %}
+                        {% if book.category == category.READING %}
+                            {% include "book_library/_book.html" %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </li>
+            <li class="mt-5">
+                <h2>Books I've read</h2>
+                <div class="row row-cols-1 row-cols-md-6 g-4">
+                    {% for book in books %}
+                        {% if book.category == category.HAVE_READ %}
+                            {% include "book_library/_book.html" %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </li>
+            <li class="mt-5">
+                <h2>Books I will read</h2>
+                <div class="row row-cols-1 row-cols-md-6 g-4">
+                    {% for book in books %}
+                        {% if book.category == category.WILL_READ %}
+                            {% include "book_library/_book.html" %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </li>
+        </ul>
+    </div>
 {% endblock %}

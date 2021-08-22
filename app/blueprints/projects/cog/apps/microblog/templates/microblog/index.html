@@ -2,46 +2,41 @@
 
 {% set active_page = "cog_microblog" %}
 
-{% block content %}
-    <main>
-        <div class="container my-5 text-center">
-            <h1 class="fw-bold">Microblog</h1>
+{% block page_content %}
+    <div class="text-center">
+        <!-- Each post will be contained in a section or article -->
+        <section class="posts-container">
+            <div class="container my-5 text-center">
 
-            <!-- Each post will be contained in a section or article -->
-            <section class="posts-container">
-                <div class="container my-5 text-center">
-
-                    <article class="post mb-4 text-lg-start">
-                        <div class="container p-4 bg-light rounded-3 col-lg-8 bg-content">
-                            <header class="mb-3">
-                                <p class="d-inline">Post Title</p> 🔶
-                                <p class="d-inline">Date</p>
-                            </header>
-                            <p>
+                <article class="post mb-4 text-lg-start">
+                    <div class="container p-4 bg-light rounded-3 col-lg-8 bg-content">
+                        <header class="mb-3">
+                            <p class="d-inline">Post Title</p> 🔶
+                            <p class="d-inline">Date</p>
+                        </header>
+                        <p>
                             <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                                 Ad animi consectetur dicta eligendi, expedita inventore totam
                                 vero? Accusantium aliquid cum eveniet id? Asperiores in iste
                                 itaque reiciendis, sapiente sit veniam.</span>
-                            </p>
-                        </div>
-                    </article>
+                        </p>
+                    </div>
+                </article>
 
-                    <article class="post mb-4 text-lg-start">
-                        <div class="container p-4 bg-light rounded-3 col-lg-8 bg-content">
-                            <header class="mb-3">
-                                <p class="d-inline">Post Title</p> 🔶
-                                <p class="d-inline">Date</p>
-                            </header>
-                            <p>
+                <article class="post mb-4 text-lg-start">
+                    <div class="container p-4 bg-light rounded-3 col-lg-8 bg-content">
+                        <header class="mb-3">
+                            <p class="d-inline">Post Title</p> 🔶
+                            <p class="d-inline">Date</p>
+                        </header>
+                        <p>
                             <span>Accusantium aliquid cum eveniet id? Asperiores in iste
                                 itaque reiciendis, sapiente sit veniam.</span>
-                            </p>
-                        </div>
-                    </article>
+                        </p>
+                    </div>
+                </article>
 
-                </div>
-            </section>
-
-        </div>
-    </main>
+            </div>
+        </section>
+    </div>
 {% endblock %}

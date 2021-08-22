@@ -2,10 +2,6 @@
     border-bottom: 1px solid var(--border-color-website-primary-alt) !important;
 }
 
-.bg-dark {
-    background-color: var(--bg-color-website-primary) !important;
-}
-
 .logo {
     height: 50px;
     width: 50px;

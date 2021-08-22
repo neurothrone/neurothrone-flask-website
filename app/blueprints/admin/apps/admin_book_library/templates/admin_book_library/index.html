@@ -8,113 +8,18 @@
 {% endblock %}
 
 {% block page_content %}
-
-    <div class="row justify-content-center align-items-center">
-        <div class="col col-sm-10 col-md-8 col-lg-8 col-xl-6">
-            <div class="container bg-secondary bg-opacity-25 p-3 rounded-3">
-                <header>
-                    <h2 class="text-center">Add Book</h2>
-                </header>
-
-                {% if form %}
-                    <form action=""
-                          method="post"
-                          novalidate>
-                        {# protects against CSRF attacks #}
-                        {{ form.hidden_tag() }}
-                        <div class="mb-3">
-                            {{ form.name.label(class="form-label", for="name") }}
-                            {{ form.name(class="form-control input-field", id="name") }}
-                            {% for error in form.name.errors %}
-                                <span style="color: red;">[{{ error }}]</span>
-                            {% endfor %}
-                        </div>
-                        <div class="mb-3">
-                            {{ form.author.label(class="form-label", for="author") }}
-                            {{ form.author(class="form-control input-field", id="author") }}
-                            {% for error in form.author.errors %}
-                                <span style="color: red;">[{{ error }}]</span>
-                            {% endfor %}
-                        </div>
-                        <div class="mb-3">
-                            {{ form.category.label(class="form-label", for="category") }}
-                            {{ form.category(class="form-select custom-select input-field", id="category") }}
-                            {% for error in form.category.errors %}
-                                <span style="color: red;">[{{ error }}]</span>
-                            {% endfor %}
-                        </div>
-                        <div class="mb-3">
-                            {{ form.book_link.label(class="form-label", for="book_link") }}
-                            {{ form.book_link(class="form-control input-field", id="book_link") }}
-                            {% for error in form.book_link.errors %}
-                                <span style="color: red;">[{{ error }}]</span>
-                            {% endfor %}
-                        </div>
-                        <div class="mb-3">
-                            {{ form.image_link.label(class="form-label", for="image_link") }}
-                            {{ form.image_link(class="form-control input-field", id="image_link") }}
-                            {% for error in form.image_link.errors %}
-                                <span style="color: red;">[{{ error }}]</span>
-                            {% endfor %}
-                        </div>
-
-                        <div class="row">
-                            <div class="col">
-                                <button class="btn btn-outline-warning float-start"
-                                        type="reset">
-                                    Reset
-                                </button>
-                            </div>
-                            <div class="col">
-                                {{ form.submit(class="btn btn-outline-primary float-end") }}
-                            </div>
-                        </div>
-                    </form>
-                {% endif %}
-            </div>
-        </div>
-
-        {#    {% if form %}#}
-        {#        <form method="post" novalidate>#}
-        {# protects against CSRF attacks #}
-        {#            {{ form.hidden_tag() }}#}
-        {#            <p>#}
-        {#                {{ form.name.label(class="form-label", for="name") }}<br>#}
-        {#                {{ form.name(size=32, class="form-control", id="name") }}<br>#}
-        {#                {% for error in form.name.errors %}#}
-        {#                    <span style="color: red;">[{{ error }}]</span>#}
-        {#                {% endfor %}#}
-        {#            </p>#}
-        {#            <p>#}
-        {#                {{ form.author.label }}<br>#}
-        {#                {{ form.author(size=32) }}<br>#}
-        {#                {% for error in form.author.errors %}#}
-        {#                    <span style="color: red;">[{{ error }}]</span>#}
-        {#                {% endfor %}#}
-        {#            </p>#}
-        {#            <p>#}
-        {#                {{ form.category.label }}<br>#}
-        {#                {{ form.category(size=3) }}<br>#}
-        {#                {% for error in form.category.errors %}#}
-        {#                    <span style="color: red;">[{{ error }}]</span>#}
-        {#                {% endfor %}#}
-        {#            </p>#}
-        {#            <p>#}
-        {#                {{ form.book_link.label }}<br>#}
-        {#                {{ form.book_link(size=32) }}<br>#}
-        {#                {% for error in form.book_link.errors %}#}
-        {#                    <span style="color: red;">[{{ error }}]</span>#}
-        {#                {% endfor %}#}
-        {#            </p>#}
-        {#            <p>#}
-        {#                {{ form.image_link.label }}<br>#}
-        {#                {{ form.image_link(size=32) }}<br>#}
-        {#                {% for error in form.image_link.errors %}#}
-        {#                    <span style="color: red;">[{{ error }}]</span>#}
-        {#                {% endfor %}#}
-        {#            </p>#}
-        {#            <p>{{ form.submit(class="btn btn-outline-primary") }}</p>#}
-        {#        </form>#}
-        {#    {% endif %}#}
+    <div class="text-center">
+        <!-- Button trigger modal -->
+        <button class="btn btn-outline-primary"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop">
+            Add new book
+        </button>
     </div>
+    {% include "admin_book_library/_add_book_modal.html" %}
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for("static", filename="bootstrap/js/bootstrap.bundle.min.js") }}"></script>
 {% endblock %}

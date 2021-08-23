@@ -2,6 +2,12 @@
 
 {% set active_page = "jba_index" %}
 
+{% block back_link %}
+    <a class="text-reset back_link"
+       href="{{ url_for("main.projects") }}">
+        <i class="fas fa-arrow-alt-circle-left"></i></a>
+{% endblock %}
+
 {% block page_content %}
     <div class="text-center">
         <ul class="list-unstyled">

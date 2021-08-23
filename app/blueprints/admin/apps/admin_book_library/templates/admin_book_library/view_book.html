@@ -2,6 +2,12 @@
 
 {% set active_page = "admin_book_library_view_book" %}
 
+{% block back_link %}
+    <a class="text-reset back_link"
+       href="{{ url_for("admin_book_library.index") }}">
+        <i class="fas fa-arrow-alt-circle-left"></i></a>
+{% endblock %}
+
 {% block page_content %}
     <table class="table bg-secondary bg-opacity-25 text-light">
         <thead>

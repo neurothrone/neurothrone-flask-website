@@ -1,5 +1,9 @@
+.back_link:hover {
+    color: var(--text-color-global-nav-link-hover) !important;
+}
+
 .local-nav-link {
-    color: #7f6df2 !important;
+    color: var(--text-color-global-nav-link-hover) !important;
 }
 
 .local-nav-link:hover {
@@ -36,7 +40,7 @@
 }
 
 .btn-outline-primary:hover,
-/*.btn-outline-primary:active,*/
+    /*.btn-outline-primary:active,*/
 .btn-outline-primary:visited,
 .btn-outline-primary:focus {
     background-color: var(--text-color-global-nav-link-hover) !important;

@@ -2,6 +2,12 @@
 
 {% set active_page = "admin_book_library_form" %}
 
+{% block back_link %}
+    <a class="text-reset back_link"
+       href="{{ url_for("admin_book_library.index") }}">
+        <i class="fas fa-arrow-alt-circle-left"></i></a>
+{% endblock %}
+
 {% block page_content %}
     <div class="row justify-content-center align-items-center">
         <div class="col col-sm-10 col-md-8 col-lg-8 col-xl-6">

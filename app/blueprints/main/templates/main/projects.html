@@ -5,8 +5,10 @@
     <div class="text-center">
         <ul class="list-unstyled">
             <li class="mt-5">
-                <h2>Cortex of Growth Projects</h2>
-                <div class="card-group">
+                <h2><a class="text-decoration-none local-nav-link"
+                       href="{{ url_for('cog.index') }}">Cortex of Growth Projects</a>
+                </h2>
+                <div class="card-group mt-5">
                     <div class="card">
                         <img class="card-img-top"
                              src="{{ url_for('static', filename='img/logo.png') }}"
@@ -36,14 +38,12 @@
                         </div>
                     </div>
                 </div>
-                <p class="mt-5">
-                    <a class="text-decoration-none local-nav-link"
-                       href="{{ url_for('cog.index') }}">All Cortex of Growth Projects</a>
-                </p>
             </li>
             <li class="mt-5">
-                <h2>JetBrains Academy Projects</h2>
-                <div class="card-group">
+                <h2><a class="text-decoration-none local-nav-link"
+                       href="{{ url_for('jba.index') }}">JetBrains Academy Projects</a>
+                </h2>
+                <div class="card-group mt-5">
                     <div class="card">
                         <img class="card-img-top"
                              src="{{ url_for('static', filename='img/logo.png') }}"
@@ -73,18 +73,12 @@
                         </div>
                     </div>
                 </div>
-                <p class="mt-5">
-                    <a class="text-decoration-none local-nav-link"
-                       href="{{ url_for('jba.index') }}">All JetBrains Academy Projects</a>
-                </p>
             </li>
             <li class="mt-5">
-                <h2>Work Projects</h2>
+                <h2><a class="text-decoration-none local-nav-link"
+                       href="{{ url_for('work.index') }}">Work Projects</a>
+                </h2>
                 <!-- Card Group -->
-                <p class="mt-5">
-                    <a class="text-decoration-none local-nav-link"
-                       href="{{ url_for('work.index') }}">All Work Projects</a>
-                </p>
             </li>
         </ul>
     </div>

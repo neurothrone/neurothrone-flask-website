@@ -8,5 +8,5 @@
 }
 
 .bg-dark-alt {
-    background-color: #111 !important;
+    background-color: var(--bg-color-website-primary-alt)  !important;
 }

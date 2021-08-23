@@ -7,19 +7,140 @@
           href="{{ url_for("admin_book_library.static", filename="css/admin-book-library.css") }}">
 {% endblock %}
 
-{% block page_content %}
-    <div class="text-center">
-        <!-- Button trigger modal -->
-        <button class="btn btn-outline-primary"
-                type="button"
-                data-bs-toggle="modal"
-                data-bs-target="#staticBackdrop">
-            Add new book
-        </button>
-    </div>
-    {% include "admin_book_library/_add_book_modal.html" %}
-{% endblock %}
+{#{% block modal %}{% include "admin_book_library/modal_book.html" %}{% endblock %}#}
 
-{% block scripts %}
-    <script src="{{ url_for("static", filename="bootstrap/js/bootstrap.bundle.min.js") }}"></script>
+{% block page_content %}
+    <div class="row">
+        <form class="col-auto"
+              action=""
+              method="post">
+            <div class="row">
+                <div class="col">
+                    <input class="form-control input-field"
+                           type="text"
+                           placeholder="Search by..."
+                           aria-label="Search">
+                </div>
+                <div class="col">
+                    <button class="btn btn-outline-primary"
+                            type="submit">Search
+                    </button>
+                </div>
+            </div>
+
+            <div class="py-3">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input btn-outline-primary"
+                           id="id-option"
+                           type="radio"
+                           name="search-radios"
+                           value="id"
+                           checked>
+                    <label class="form-check-label"
+                           for="id-option">id</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input btn-outline-primary"
+                           id="name-option"
+                           type="radio"
+                           name="search-radios"
+                           value="name">
+                    <label class="form-check-label"
+                           for="name-option">name</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input btn-outline-primary"
+                           id="author-option"
+                           type="radio"
+                           name="search-radios"
+                           value="author">
+                    <label class="form-check-label"
+                           for="author-option">author</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input btn-outline-primary"
+                           id="category-option"
+                           type="radio"
+                           name="search-radios"
+                           value="category">
+                    <label class="form-check-label"
+                           for="category-option">category</label>
+                </div>
+
+            </div>
+        </form>
+        <form class="col d-inline text-end"
+              action="{{ url_for("admin_book_library.add_book") }}">
+            <button class="btn btn-outline-primary"
+                    type="submit">
+                Add new book
+            </button>
+        </form>
+    </div>
+
+    <!-- Table of books with view, edit and remove buttons -->
+    <div class="mt-3">
+        <table class="table bg-secondary bg-opacity-25 text-light">
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Author</th>
+                <th scope="col">Category</th>
+                <th scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody class="bg-dark text-light">
+            {% for book in books %}
+                <tr>
+                    <th scope="row">{{ book.id }}</th>
+                    <td>{{ book.name }}</td>
+                    <td>{{ book.author }}</td>
+                    <td>{{ book.category }}</td>
+                    <td>
+                        {#<button class="btn btn-outline-info"#}
+                        {#        type="button"#}
+                        {#        data-bs-toggle="modal"#}
+                        {#        data-bs-target="#staticBackdrop">#}
+                        {#    <i class="far fa-eye"></i>#}
+                        {#</button>#}
+                        <form class="d-inline"
+                              action="{{ url_for("admin_book_library.view_book", book_id=book.id) }}"
+                              method="get">
+                            <button class="btn btn-outline-info"
+                                    type="submit"
+                                    data-toggle="tooltip"
+                                    data-placement="top"
+                                    title="View">
+                                <i class="far fa-eye"></i>
+                            </button>
+                        </form>
+                        <form class="d-inline"
+                              action="{{ url_for("admin_book_library.edit_book", book_id=book.id) }}"
+                              method="get">
+                            <button class="btn btn-outline-warning"
+                                    type="submit"
+                                    data-toggle="tooltip"
+                                    data-placement="top"
+                                    title="Edit">
+                                <i class="far fa-edit"></i>
+                            </button>
+                        </form>
+                        <form class="d-inline"
+                              action="{{ url_for("admin_book_library.delete_book", book_id=book.id) }}"
+                              method="post">
+                            <button class="btn btn-outline-danger"
+                                    type="submit"
+                                    data-toggle="tooltip"
+                                    data-placement="top"
+                                    title="Delete">
+                                <i class="far fa-trash-alt"></i>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}

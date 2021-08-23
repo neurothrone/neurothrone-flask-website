@@ -32,6 +32,7 @@
     background-color: var(--bg-color-website-primary) !important;
     border-color: var(--text-color-global-nav-link-hover) !important;
     color: var(--text-color-global-nav-link-hover);
+    box-shadow: none !important;
 }
 
 .btn-outline-primary:hover,

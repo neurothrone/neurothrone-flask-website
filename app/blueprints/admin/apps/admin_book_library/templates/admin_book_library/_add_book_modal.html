@@ -71,7 +71,15 @@
                             </button>
                         </div>
                         <div class="">
-                            {{ form.submit(class="btn btn-outline-primary") }}
+{#                            {{ form.submit(class_="btn btn-outline-primary", **{"type": "button"}) }}#}
+                            <form action="{{ url_for("admin_book_library.index") }}"
+                                  method="post">
+                                <button class="btn btn-outline-primary"
+                                        data-backdrop="static"
+                                        type="submit">
+                                    Add book
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -79,59 +87,3 @@
         {% endif %}
     </div>
 </div>
-
-{#{% if form %}#}
-{#    <form action=""#}
-{#          method="post"#}
-{#          novalidate>#}
-{# protects against CSRF attacks #}
-{#        {{ form.hidden_tag() }}#}
-{#        <div class="mb-3">#}
-{#            {{ form.name.label(class="form-label", for="name") }}#}
-{#            {{ form.name(class="form-control input-field", id="name") }}#}
-{#            {% for error in form.name.errors %}#}
-{#                <span style="color: red;">[{{ error }}]</span>#}
-{#            {% endfor %}#}
-{#        </div>#}
-{#        <div class="mb-3">#}
-{#            {{ form.author.label(class="form-label", for="author") }}#}
-{#            {{ form.author(class="form-control input-field", id="author") }}#}
-{#            {% for error in form.author.errors %}#}
-{#                <span style="color: red;">[{{ error }}]</span>#}
-{#            {% endfor %}#}
-{#        </div>#}
-{#        <div class="mb-3">#}
-{#            {{ form.category.label(class="form-label", for="category") }}#}
-{#            {{ form.category(class="form-select custom-select input-field", id="category") }}#}
-{#            {% for error in form.category.errors %}#}
-{#                <span style="color: red;">[{{ error }}]</span>#}
-{#            {% endfor %}#}
-{#        </div>#}
-{#        <div class="mb-3">#}
-{#            {{ form.book_link.label(class="form-label", for="book_link") }}#}
-{#            {{ form.book_link(class="form-control input-field", id="book_link") }}#}
-{#            {% for error in form.book_link.errors %}#}
-{#                <span style="color: red;">[{{ error }}]</span>#}
-{#            {% endfor %}#}
-{#        </div>#}
-{#        <div class="mb-3">#}
-{#            {{ form.image_link.label(class="form-label", for="image_link") }}#}
-{#            {{ form.image_link(class="form-control input-field", id="image_link") }}#}
-{#            {% for error in form.image_link.errors %}#}
-{#                <span style="color: red;">[{{ error }}]</span>#}
-{#            {% endfor %}#}
-{#        </div>#}
-{##}
-{#        <div class="row">#}
-{#            <div class="col">#}
-{#                <button class="btn btn-outline-warning float-start"#}
-{#                        type="reset">#}
-{#                    Reset#}
-{#                </button>#}
-{#            </div>#}
-{#            <div class="col">#}
-{#                {{ form.submit(class="btn btn-outline-primary float-end") }}#}
-{#            </div>#}
-{#        </div>#}
-{#    </form>#}
-{#{% endif %}#}

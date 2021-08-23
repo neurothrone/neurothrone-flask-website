@@ -1,0 +1,28 @@
+{% extends "layout/base.html" %}
+
+{% set active_page = "admin_book_library_view_book" %}
+
+{% block page_content %}
+    <table class="table bg-secondary bg-opacity-25 text-light">
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Author</th>
+            <th scope="col">Category</th>
+            <th scope="col">Book link</th>
+            <th scope="col">Image link</th>
+        </tr>
+        </thead>
+        <tbody class="bg-dark text-light">
+        <tr>
+            <th scope="row">{{ book.id }}</th>
+            <td>{{ book.name }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.category }}</td>
+            <td>{{ book.book_link }}</td>
+            <td>{{ book.image_link }}</td>
+        </tr>
+        </tbody>
+    </table>
+{% endblock %}

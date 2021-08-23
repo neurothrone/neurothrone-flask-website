@@ -1,3 +1,5 @@
+from werkzeug.datastructures import ImmutableMultiDict
+
 from app.models import BaseModel
 from app.models import db
 
@@ -37,6 +39,14 @@ class Book(BaseModel):
 
     def __repr__(self):
         return f"<Book '{self.name}' by '{self.author}'>"
+
+    def update(self, data: dict[str, str]) -> None:
+        self.name = data["name"]
+        self.author = data["author"]
+        self.category = data["category"]
+        self.book_link = data["book_link"]
+        self.image_link = data["image_link"]
+        db.session.commit()
 
     def to_dict(self) -> dict:
         return {

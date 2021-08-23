@@ -1,0 +1,14 @@
+{% extends "layout/base.html" %}
+
+{% set active_page = "admin_book_library_form" %}
+
+{% block page_content %}
+    <div class="row justify-content-center align-items-center">
+        <div class="col col-sm-10 col-md-8 col-lg-8 col-xl-6">
+            {% if form %}
+                <h2 class="text-center">{{ "Add Book" if form_type == "ADD" else "Edit Book" }}</h2>
+                {% include "admin_book_library/_book_form.html" %}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

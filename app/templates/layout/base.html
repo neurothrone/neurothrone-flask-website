@@ -28,6 +28,8 @@
 
 {% include "layout/header.html" %}
 
+{% block modal %}{% endblock %}
+
 <main>
     <header>
         <div class="text-center my-5">
@@ -43,7 +45,18 @@
 {% include "messages/_flash.html" %}
 {% include "layout/footer.html" %}
 
-{% block scripts %}{% endblock %}
+{% block scripts %}
+    <!-- the order of scripts matter -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{{ url_for("static", filename="bootstrap/js/bootstrap.bundle.min.js") }}"></script>
+
+    <!-- enables tooltips on all pages -->
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+{% endblock %}
 
 </body>
 </html>

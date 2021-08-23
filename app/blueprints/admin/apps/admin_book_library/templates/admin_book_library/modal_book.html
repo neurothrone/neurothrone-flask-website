@@ -1,0 +1,54 @@
+<div class="modal fade"
+     id="staticBackdrop"
+     data-bs-backdrop="static"
+     data-bs-keyboard="false"
+     tabindex="-1"
+     aria-labelledby="staticBackdropLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"
+                    id="staticBackdropLabel">Modal title</h5>
+                <button class="btn-close"
+                        type="button"
+                        data-bs-dismiss="modal"
+                        aria-label="Close">
+                </button>
+            </div>
+            <div class="modal-body">
+                {% if book %}
+                    <table>
+                        <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Author</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">{{ book.id }}</th>
+                            <td>{{ book.name }}</td>
+                            <td>{{ book.author }}</td>
+                            <td>{{ book.category }}</td>
+                            <td>{{ book.book_link }}</td>
+                            <td>{{ book.image_link }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                {% else %}
+                    <p>No book data found.</p>
+                {% endif %}
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary"
+                        type="button"
+                        data-bs-dismiss="modal">Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

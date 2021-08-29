@@ -29,8 +29,11 @@ class Book(BaseModel):
         self.category = category
         self.book_link = book_link
         self.image_link = image_link
-        self.alt_text = f"book cover for {self.name} by {self.author}"
         super().__init__()
+
+    @property
+    def alt_text(self) -> str:
+        return f"book cover for {self.name} by {self.author}"
 
     def __repr__(self) -> str:
         return f"{self.__class__.__name__}({self.name}, {self.author}, " \

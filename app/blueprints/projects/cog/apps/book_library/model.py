@@ -1,5 +1,3 @@
-from werkzeug.datastructures import ImmutableMultiDict
-
 from app.models import BaseModel
 from app.models import db
 
@@ -19,26 +17,27 @@ class Book(BaseModel):
     category = db.Column(db.String(10))
     book_link = db.Column(db.String(120))
     image_link = db.Column(db.String(120))
-    # TODO: image resource?
-    alt_text = db.Column(db.String(120))
 
     def __init__(self,
                  name: str,
                  author: str,
                  category: str = "",
                  book_link: str = "",
-                 image_link: str = "",
-                 alt_text: str = "") -> None:
+                 image_link: str = "") -> None:
         self.name = name
         self.author = author
         self.category = category
         self.book_link = book_link
         self.image_link = image_link
-        self.alt_text = alt_text
+        self.alt_text = f"book cover for {self.name} by {self.author}"
         super().__init__()
 
-    def __repr__(self):
-        return f"<Book '{self.name}' by '{self.author}'>"
+    def __repr__(self) -> str:
+        return f"{self.__class__.__name__}({self.name}, {self.author}, " \
+               f"{self.category}, {self.book_link}, {self.image_link})'>"
+
+    def __str__(self) -> str:
+        return f"{self.name} by {self.author}"
 
     def update(self, data: dict[str, str]) -> None:
         self.name = data["name"]

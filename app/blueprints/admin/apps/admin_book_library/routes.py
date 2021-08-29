@@ -38,7 +38,7 @@ def add_book():
 @bp.route("/book/edit/<book_id>", methods=["GET", "POST"])
 def edit_book(book_id: int):
     book = Book.find_by_id(book_id)
-    form = EditBookForm()
+    form = EditBookForm(original_name=book.name)
 
     if form.validate_on_submit():
         new_data = {

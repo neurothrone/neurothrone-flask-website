@@ -22,12 +22,18 @@ class BookForm(FlaskForm):
     book_link = StringField("Book link", validators=[DataRequired()])
     image_link = StringField("Image link", validators=[DataRequired()])
 
+    def __init__(self, original_name: str, *args, **kwargs) -> None:
+        super(BookForm, self).__init__(*args, **kwargs)
+        self.original_name = original_name
+
     # Custom defined methods of the format: validate_<field_name> will be used
     # by WTForms as custom validators and are invoked in addition to the
     # stock validators in the validators=[] argument
 
     # NOTE: will not work if it is a classmethod or staticmethod
     def validate_name(self, name_field: StringField) -> None:
+        if name_field.data == self.original_name:
+            return
         if Book.find_by_name(name_field.data):
             raise ValidationError("There is already a book by that name.")
 

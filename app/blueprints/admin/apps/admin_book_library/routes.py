@@ -14,7 +14,7 @@ def index():
     books = Book.find_all()
     return render_template("admin_book_library/index.html",
                            books=books,
-                           title="Admin Book Library")
+                           title="Book Library")
 
 
 @bp.route("/book/add", methods=["GET", "POST"])
@@ -32,7 +32,7 @@ def add_book():
     return render_template("admin_book_library/book.html",
                            form=form,
                            form_type="ADD",
-                           title="Admin Book Library")
+                           title="Book Library")
 
 
 @bp.route("/book/edit/<book_id>", methods=["GET", "POST"])
@@ -62,7 +62,7 @@ def edit_book(book_id: int):
                            book=book,
                            form=form,
                            form_type="EDIT",
-                           title="Admin Book Library")
+                           title="Book Library")
 
 
 @bp.route("/book/delete/<book_id>", methods=["POST"])
@@ -78,6 +78,6 @@ def view_book(book_id: int):
     if book := Book.find_by_id(book_id):
         print(book)
         return render_template("admin_book_library/view_book.html",
-                               title="Admin Book Library",
+                               title="Book Library",
                                book=book)
     return redirect(url_for("admin_book_library.index"))

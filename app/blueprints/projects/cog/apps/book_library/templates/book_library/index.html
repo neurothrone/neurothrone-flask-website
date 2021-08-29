@@ -8,10 +8,10 @@
 {% endblock %}
 
 {% block page_content %}
-    <div class="text-center">
+    <div class="text-center mb-5">
         <ul class="list-unstyled">
             <li class="mt-5">
-                <h2>Currently reading</h2>
+                <h2 class="mb-5">Currently reading</h2>
                 <div class="row row-cols-1 row-cols-md-6 g-4">
                     {% for book in books %}
                         {% if book.category == category.READING %}
@@ -21,7 +21,7 @@
                 </div>
             </li>
             <li class="mt-5">
-                <h2>Books I've read</h2>
+                <h2 class="mb-5">Books I've read</h2>
                 <div class="row row-cols-1 row-cols-md-6 g-4">
                     {% for book in books %}
                         {% if book.category == category.HAVE_READ %}
@@ -31,7 +31,7 @@
                 </div>
             </li>
             <li class="mt-5">
-                <h2>Books I will read</h2>
+                <h2 class="mb-5">Books I will read</h2>
                 <div class="row row-cols-1 row-cols-md-6 g-4">
                     {% for book in books %}
                         {% if book.category == category.WILL_READ %}

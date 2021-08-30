@@ -1,0 +1,32 @@
+<form class="mb-5"
+      action=""
+      method="post"
+      novalidate>
+    {# protects against CSRF attacks #}
+    {{ form.hidden_tag() }}
+    <div class="mb-3">
+        {{ form.title.label(class="form-label", for="title") }}
+        {{ form.title(class="form-control input-field", id="title") }}
+        {% for error in form.title.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </div>
+    <div class="mb-3">
+        {{ form.body.label(class="form-label", for="body") }}
+        {{ form.body(class="form-control input-field", id="body") }}
+        {% for error in form.body.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </div>
+    <div class="row">
+        <div class="col text-start">
+            <button class="btn btn-outline-warning"
+                    type="reset">
+                Reset
+            </button>
+        </div>
+        <div class="col text-end">
+            {{ form.submit(class="btn btn-outline-primary") }}
+        </div>
+    </div>
+</form>

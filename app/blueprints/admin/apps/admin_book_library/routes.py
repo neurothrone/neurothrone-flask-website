@@ -11,9 +11,8 @@ from app.blueprints.projects.cog.apps.book_library.model import Book
 
 @bp.route("/", methods=["GET", "POST"])
 def index():
-    books = Book.find_all()
     return render_template("admin_book_library/index.html",
-                           books=books,
+                           books=Book.find_all(),
                            title="Book Library")
 
 
@@ -76,7 +75,6 @@ def delete_book(book_id: int):
 @bp.route("/book/<book_id>", methods=["GET"])
 def view_book(book_id: int):
     if book := Book.find_by_id(book_id):
-        print(book)
         return render_template("admin_book_library/view_book.html",
                                title="Book Library",
                                book=book)

@@ -22,7 +22,7 @@ class BookForm(FlaskForm):
     book_link = StringField("Book link", validators=[DataRequired()])
     image_link = StringField("Image link", validators=[DataRequired()])
 
-    def __init__(self, original_name: str, *args, **kwargs) -> None:
+    def __init__(self, original_name: str = None, *args, **kwargs) -> None:
         super(BookForm, self).__init__(*args, **kwargs)
         self.original_name = original_name
 
@@ -32,7 +32,7 @@ class BookForm(FlaskForm):
 
     # NOTE: will not work if it is a classmethod or staticmethod
     def validate_name(self, name_field: StringField) -> None:
-        if name_field.data == self.original_name:
+        if self.original_name and name_field.data == self.original_name:
             return
         if Book.find_by_name(name_field.data):
             raise ValidationError("There is already a book by that name.")

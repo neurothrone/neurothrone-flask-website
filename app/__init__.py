@@ -42,6 +42,11 @@ def create_app(config: Type[Config] = Config) -> Flask:
                            subdomain=Subdomain.ADMIN,
                            url_prefix="/book-library")
 
+    from app.blueprints.admin.apps.admin_microblog import bp as admin_microblog_bp
+    app.register_blueprint(blueprint=admin_microblog_bp,
+                           subdomain=Subdomain.ADMIN,
+                           url_prefix="/microblog")
+
     # main section
     from app.blueprints.main import bp as main_bp
     app.register_blueprint(blueprint=main_bp)
